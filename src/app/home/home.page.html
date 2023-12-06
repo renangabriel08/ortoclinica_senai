@@ -61,7 +61,7 @@
     <div class="slides">
       <swiper-container slides-per-view="3" space-between="0" grab-cursor="true">
 
-    <swiper-slide *ngFor="let medico of medicos; let i = index;">
+    <swiper-slide *ngFor="let medico of medicos; let i = index;" id="open-modal">
       <div class="card-header">
         <div>
           <ion-icon name="heart"></ion-icon>
@@ -129,3 +129,30 @@
   </div>
 
 </ion-content>
+
+<ion-modal trigger="open-modal">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Welcome</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item>
+        <ion-input
+          label="Enter your name"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Your name"
+          [(ngModel)]="name"
+        ></ion-input>
+      </ion-item>
+    </ion-content>
+  </ng-template>
+</ion-modal>

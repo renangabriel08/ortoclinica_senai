@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import { UsuariosRoute } from '../routes/usuarios.route';
+import { IonModal } from '@ionic/angular';
+
 
 
 @Component({
@@ -10,6 +12,8 @@ import { UsuariosRoute } from '../routes/usuarios.route';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+  @ViewChild(IonModal) modal!: IonModal;
+  name!: string;
 
   constructor(
     private storage: Storage,
@@ -38,4 +42,13 @@ export class HomePage implements OnInit {
       await this.storage.remove('senha');
       this.router.navigate(['/login'], { replaceUrl: true});
     }
+
+    cancel() {
+      this.modal.dismiss(null, 'cancel');
+    }
+  
+    confirm() {
+      this.modal.dismiss(this.name, 'confirm');
+    }
+
 }
