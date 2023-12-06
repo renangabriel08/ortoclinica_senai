@@ -1,0 +1,130 @@
+  <ion-content class="login">
+
+    <form [formGroup]="formulario" (ngSubmit)="validarForm()">
+
+      <ion-toolbar>
+        <ion-text class="welcome">
+          <h1>Bem-vindo de volta a cliníca <b>Ortocliníca!</b></h1>
+        </ion-text>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-item>
+          <div>
+          <ion-input [ngClass]="{'error' : !formularioValido }" formControlName="email" fill="solid" placeholder="E-mail" type="email"></ion-input>
+          <p *ngIf="!formularioValido" class="type-error">Digite um e-mail</p>
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <div>
+          <ion-input [ngClass]="{'error' : !formularioValido }" formControlName="senha" fill="solid" placeholder="Senha" type="password"></ion-input>
+          <ion-icon name="eye" slot="end"></ion-icon>
+          <p *ngIf="!formularioValido" class="type-error">Digite uma senha</p>
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <a href="/esqsenha" slot="end">Esqueceu a senha?</a>
+        </ion-item>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <ion-button type="submit" class="primary" expand="block">Login</ion-button>
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <div class="hr">
+          <div>Entrar com</div>
+          <hr />
+        </div>
+      </ion-toolbar>
+
+      <ion-toolbar class="login-buttons">
+        <ion-buttons>
+          <ion-button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="30"
+              height="30"
+              viewBox="0,0,256,256"
+              style="fill: #228be6"
+            >
+              <g
+                fill="#228be6"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <g transform="scale(8,8)">
+                  <path
+                    d="M19.25391,2c-3.942,0 -6.25391,2.08217 -6.25391,6.82617v4.17383h-5v5h5v12h5v-12h4l1,-5h-5v-3.32812c0,-1.787 0.58277,-2.67187 2.25977,-2.67187h2.74023v-4.79492c-0.474,-0.064 -1.85509,-0.20508 -3.74609,-0.20508z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </ion-button>
+
+          <ion-button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="26"
+              height="26"
+              viewBox="0 0 48 48"
+            >
+              <path
+                fill="#FFC107"
+                d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+              ></path>
+              <path
+                fill="#FF3D00"
+                d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+              ></path>
+              <path
+                fill="#4CAF50"
+                d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+              ></path>
+              <path
+                fill="#1976D2"
+                d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+              ></path>
+            </svg>
+          </ion-button>
+
+          <ion-button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="26"
+              height="26"
+              viewBox="0 0 26 26"
+            >
+              <path
+                d="M 23.933594 18.945313 C 23.335938 20.269531 23.050781 20.863281 22.28125 22.03125 C 21.210938 23.667969 19.695313 25.707031 17.820313 25.71875 C 16.15625 25.734375 15.726563 24.632813 13.464844 24.652344 C 11.203125 24.660156 10.730469 25.738281 9.0625 25.722656 C 7.191406 25.707031 5.757813 23.867188 4.683594 22.238281 C 1.679688 17.664063 1.363281 12.300781 3.21875 9.449219 C 4.53125 7.425781 6.609375 6.238281 8.5625 6.238281 C 10.546875 6.238281 11.796875 7.328125 13.441406 7.328125 C 15.035156 7.328125 16.003906 6.234375 18.304688 6.234375 C 20.039063 6.234375 21.878906 7.179688 23.191406 8.816406 C 18.894531 11.167969 19.59375 17.304688 23.933594 18.945313 Z M 16.558594 4.40625 C 17.394531 3.335938 18.027344 1.820313 17.800781 0.277344 C 16.433594 0.371094 14.839844 1.242188 13.90625 2.367188 C 13.0625 3.394531 12.363281 4.921875 12.636719 6.398438 C 14.125 6.445313 15.664063 5.558594 16.558594 4.40625 Z"
+              ></path>
+            </svg>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+
+      <ion-item class="text-register">
+        <p>Não possui conta?</p>
+        <a href="/cadastro">Registre-se</a>
+      </ion-item>
+    </form>
+  </ion-content>

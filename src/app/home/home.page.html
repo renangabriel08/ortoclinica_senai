@@ -1,0 +1,131 @@
+<ion-content [fullscreen]="true" class="inicio">
+  <div class="header">
+    <div>
+      <ion-button class="apps" slot="icon-only" (click)="logoff()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+        >
+          <path
+            d="M1 3C1 2.29993 1 1.9499 1.13624 1.68251C1.25608 1.44731 1.44731 1.25608 1.68251 1.13624C1.9499 1 2.29993 1 3 1H5.25C5.95007 1 6.3001 1 6.56749 1.13624C6.80269 1.25608 6.99392 1.44731 7.11376 1.68251C7.25 1.9499 7.25 2.29993 7.25 3V5.25C7.25 5.95007 7.25 6.3001 7.11376 6.56749C6.99392 6.80269 6.80269 6.99392 6.56749 7.11376C6.3001 7.25 5.95007 7.25 5.25 7.25H3C2.29993 7.25 1.9499 7.25 1.68251 7.11376C1.44731 6.99392 1.25608 6.80269 1.13624 6.56749C1 6.3001 1 5.95007 1 5.25V3Z"
+            stroke="#1E232C"
+            stroke-width="2"
+          />
+          <path
+            d="M1 14.25C1 13.5499 1 13.1999 1.13624 12.9325C1.25608 12.6973 1.44731 12.5061 1.68251 12.3862C1.9499 12.25 2.29993 12.25 3 12.25H5.25C5.95007 12.25 6.3001 12.25 6.56749 12.3862C6.80269 12.5061 6.99392 12.6973 7.11376 12.9325C7.25 13.1999 7.25 13.5499 7.25 14.25V16.5C7.25 17.2001 7.25 17.5501 7.11376 17.8175C6.99392 18.0527 6.80269 18.2439 6.56749 18.3638C6.3001 18.5 5.95007 18.5 5.25 18.5H3C2.29993 18.5 1.9499 18.5 1.68251 18.3638C1.44731 18.2439 1.25608 18.0527 1.13624 17.8175C1 17.5501 1 17.2001 1 16.5V14.25Z"
+            stroke="#1E232C"
+            stroke-width="2"
+          />
+          <path
+            d="M12.25 3C12.25 2.29993 12.25 1.9499 12.3862 1.68251C12.5061 1.44731 12.6973 1.25608 12.9325 1.13624C13.1999 1 13.5499 1 14.25 1H16.5C17.2001 1 17.5501 1 17.8175 1.13624C18.0527 1.25608 18.2439 1.44731 18.3638 1.68251C18.5 1.9499 18.5 2.29993 18.5 3V5.25C18.5 5.95007 18.5 6.3001 18.3638 6.56749C18.2439 6.80269 18.0527 6.99392 17.8175 7.11376C17.5501 7.25 17.2001 7.25 16.5 7.25H14.25C13.5499 7.25 13.1999 7.25 12.9325 7.11376C12.6973 6.99392 12.5061 6.80269 12.3862 6.56749C12.25 6.3001 12.25 5.95007 12.25 5.25V3Z"
+            stroke="#1E232C"
+            stroke-width="2"
+          />
+          <path
+            d="M12.25 14.25C12.25 13.5499 12.25 13.1999 12.3862 12.9325C12.5061 12.6973 12.6973 12.5061 12.9325 12.3862C13.1999 12.25 13.5499 12.25 14.25 12.25H16.5C17.2001 12.25 17.5501 12.25 17.8175 12.3862C18.0527 12.5061 18.2439 12.6973 18.3638 12.9325C18.5 13.1999 18.5 13.5499 18.5 14.25V16.5C18.5 17.2001 18.5 17.5501 18.3638 17.8175C18.2439 18.0527 18.0527 18.2439 17.8175 18.3638C17.5501 18.5 17.2001 18.5 16.5 18.5H14.25C13.5499 18.5 13.1999 18.5 12.9325 18.3638C12.6973 18.2439 12.5061 18.0527 12.3862 17.8175C12.25 17.5501 12.25 17.2001 12.25 16.5V14.25Z"
+            stroke="#1E232C"
+            stroke-width="2"
+          />
+        </svg>
+      </ion-button>
+      <ion-text>
+        <h1>Início</h1>
+      </ion-text>
+    </div>
+
+    <div>
+      <ion-button class="usuario">
+        <ion-text>{{nomeUsuario}}</ion-text>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="doutores">
+    <div class="legenda">
+
+
+      <div>
+        <h1>Doutores em destaque</h1>
+      </div>
+
+      <div class="muted">
+        Ver Todos >
+      </div>
+
+    </div>
+
+    <div class="slides">
+      <swiper-container slides-per-view="3" space-between="0" grab-cursor="true">
+
+    <swiper-slide *ngFor="let medico of medicos; let i = index;">
+      <div class="card-header">
+        <div>
+          <ion-icon name="heart"></ion-icon>
+        </div>
+        <div>
+          <ion-icon name="star"></ion-icon>
+          <p>{{medico.estrelas}}</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <img src="../../assets/medico{{i}}.png" alt="">
+        <h1>{{medico.nome}}</h1><span>R$ {{medico.preco}},00 / hora</span>
+      </div>
+    </swiper-slide>
+    
+    <swiper-slide></swiper-slide>
+    <swiper-slide></swiper-slide>
+    
+      </swiper-container>
+    </div>
+  </div>
+  
+  <div class="funcionalidades">
+    <div class="legenda">
+
+      <div>
+        <h1>Funcionalidade da Ortoclinica</h1>
+      </div>
+
+    </div>
+
+    <ion-buttons>
+      <div class="card">
+        <div class="btn">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+        <ion-text>Doutores</ion-text>
+      </div>
+
+      <div class="card">
+        <div class="btn">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+        <ion-text>Marcar consulta</ion-text>
+      </div>
+
+      <div class="card">
+        <div class="btn">
+          <ion-icon name="card-outline"></ion-icon>
+        </div>
+        <ion-text>Pagamentos</ion-text>
+      </div>
+     
+
+      <div class="card">
+        <div class="btn">
+          <ion-icon name="ticket-outline"></ion-icon>
+        </div>
+        <ion-text>Minha consulta</ion-text>
+      </div>
+
+      
+    </ion-buttons>
+  </div>
+
+</ion-content>

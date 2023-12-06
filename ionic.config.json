@@ -1,0 +1,7 @@
+{
+  "name": "ortoclinica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,73 @@
+<ion-content class="login">
+  <ion-toolbar>
+
+    <ion-item class="voltar">
+      <ion-button fill="outline" href="/esqsenha">
+        <svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.4159 1.33369C10.3105 1.22792 10.1853 1.14399 10.0474 1.08673C9.90954 1.02947 9.76175 1 9.61249 1C9.46324 1 9.31545 1.02947 9.17759 1.08673C9.03973 1.14399 8.91451 1.22792 8.80911 1.33369L1.26547 8.88467C1.18132 8.96873 1.11456 9.06859 1.069 9.17851C1.02345 9.28843 1 9.40627 1 9.52528C1 9.64428 1.02345 9.76212 1.069 9.87204C1.11456 9.98197 1.18132 10.0818 1.26547 10.1659L8.80911 17.7169C9.25392 18.1621 9.97106 18.1621 10.4159 17.7169C10.8607 17.2716 10.8607 16.5538 10.4159 16.1085L3.84356 9.52073L10.425 2.93294C10.8607 2.49678 10.8607 1.76985 10.4159 1.33369Z" fill="#1E232C" stroke="#1E232C" stroke-width="0.2"/>
+          </svg>      
+      </ion-button>  
+    </ion-item>
+
+    <ion-text class="welcome">
+      <h1>Esqueceu a <b>Senha?</b></h1>
+    </ion-text>
+
+    <ion-item>
+      <p class="text-gray">Agora que você recuperou sua conta, digite sua nova senha nos campos abaixo!</p>
+    </ion-item>
+
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-item>
+      <ion-input fill="solid" placeholder="Nova senha" type="password"></ion-input>
+      <ion-icon name="eye" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input fill="solid" placeholder="Confirmar nova senha*" type="password"></ion-input>
+      <ion-icon name="eye" slot="end"></ion-icon>
+    </ion-item>
+
+  </ion-toolbar>
+
+    <ion-button id="open-custom-dialog" color="dark" expand="block">Enviar nova senha</ion-button>
+  
+    <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+      <ng-template>
+          <div class="window">
+            
+            <div class="svgcentro">
+              <svg xmlns="http://www.w3.org/2000/svg" width="156" height="156" viewBox="0 0 156 156" fill="none">
+                <circle cx="78" cy="78" r="78" fill="#E7F8F2"/>
+                <path d="M49.5 71.7082C45.366 71.7082 42 75.0742 42 79.2082V103.208C42 107.342 45.366 110.708 49.5 110.708H58.5C60.189 110.708 61.7429 110.138 63 109.19V71.7082H49.5Z" fill="#35C2C1"/>
+                <path d="M115 83.25C115 81.4471 114.286 79.767 113.047 78.528C114.448 76.995 115.162 74.9399 114.967 72.801C114.616 68.9879 111.181 65.9999 107.143 65.9999H88.612C89.53 63.2129 90.9999 58.104 90.9999 54C90.9999 47.493 85.471 42 81.9999 42C78.883 42 76.6569 43.755 76.561 43.827C76.207 44.112 76 44.5441 76 45V55.1729L67.36 73.89L67 74.073V106.227C69.442 107.379 72.5319 108 74.5 108H102.037C105.304 108 108.163 105.798 108.835 102.759C109.18 101.196 108.979 99.621 108.292 98.253C110.509 97.137 112 94.854 112 92.25C112 91.188 111.757 90.171 111.295 89.2501C113.512 88.1341 115 85.851 115 83.25Z" fill="#35C2C1"/>
+              </svg>
+            </div>
+
+            <div class="sucesso">
+              <h1>Sucesso!</h1>
+            </div>
+
+            <ion-item>
+              <p class="text-gray">Sua senha foi alterada com sucesso</p>
+            </ion-item>
+
+            <ion-button color="dark" expand="block" href="/login">Ir para login</ion-button>
+
+            <ion-item class="editar" slot="center">
+              <a href="/esqsenha">Edite novamente</a>
+            </ion-item>
+          </div>
+      </ng-template>
+    </ion-modal>
+  
+
+<ion-item class="text-register">
+  <p>Lembrou da senha?</p><a href="/login">Entre agora</a>
+  </ion-item>
+
+
+
+</ion-content>

@@ -1,0 +1,141 @@
+ion-content.login {
+
+    ion-toolbar {
+        --padding-bottom: 5%;
+        
+        .welcome h1 {
+            font-size: 35px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            b {
+                color: #35c2c1;
+            }
+        }
+    }
+
+    ion-item:nth-child(n+2) {
+        margin-top: 13px;
+    }
+
+    a {
+    color: #6a707c;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+    }
+
+    .hr {
+        position: relative;
+        height: 30px;
+        margin-top: 20px;
+
+        div {
+            position: absolute;
+            right: calc(50% - 53.5px);
+            top: -10px;
+            background-color: white;
+            padding: 0 15px;
+
+            color: #6a707c;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        hr {
+            border: 1px solid #e8ecf4;
+            margin: 0;
+            border-radius: 15px;
+            background-color: #e8ecf4;
+        }
+    }
+
+    ion-button {
+        --border-radius: 8px !important;
+        --padding-top: 10px !important;
+        --padding-bottom: 10px !important;
+    }
+
+    .login-buttons {
+        ion-button:nth-child(n+2) {
+            margin-left: 3%;
+        }
+        ion-button {
+            border-radius: 8px;
+            border: 1px solid #e8ecf4;
+            height: 100%;
+            width: 33%;
+
+            ion-buttons {
+                ion-icon:before {
+                    font-style: 50px !important;
+                    color: #6a707c;
+                }
+            }
+        }
+    }
+
+    ion-item {
+        p.text-gray {
+    color: #8391A1;
+    font-size: 14px;    
+        }
+    }
+
+    ion-item.text-register {
+        margin-top: 25%;
+        position: absolute;
+        margin-left: 15%;
+    
+       a {
+        margin-left: 4px;
+        color: #35c2c1;
+        cursor: pointer;
+        }
+    }
+
+}
+
+.svgcentro {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.sucesso {
+
+    h1 {
+        color: #333;
+        font-family: Rubik;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+ion-item {
+    p.text-gray {
+        color: #677294;
+        text-align: center;
+        font-family: Rubik;
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+
+ion-item.editar {
+    a {
+        text-decoration: none;
+        margin-left: 90px;
+        cursor: pointer;
+        color: #677294;
+    }
+}

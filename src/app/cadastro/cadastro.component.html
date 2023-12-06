@@ -1,0 +1,100 @@
+<ion-content class="login">
+  <form [formGroup]="formulario" (ngSubmit)="validarForm()">
+  <ion-toolbar>
+
+    <ion-item class="voltar" href="/login">
+      <ion-button fill="outline">
+        <svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.4159 1.33369C10.3105 1.22792 10.1853 1.14399 10.0474 1.08673C9.90954 1.02947 9.76175 1 9.61249 1C9.46324 1 9.31545 1.02947 9.17759 1.08673C9.03973 1.14399 8.91451 1.22792 8.80911 1.33369L1.26547 8.88467C1.18132 8.96873 1.11456 9.06859 1.069 9.17851C1.02345 9.28843 1 9.40627 1 9.52528C1 9.64428 1.02345 9.76212 1.069 9.87204C1.11456 9.98197 1.18132 10.0818 1.26547 10.1659L8.80911 17.7169C9.25392 18.1621 9.97106 18.1621 10.4159 17.7169C10.8607 17.2716 10.8607 16.5538 10.4159 16.1085L3.84356 9.52073L10.425 2.93294C10.8607 2.49678 10.8607 1.76985 10.4159 1.33369Z" fill="#1E232C" stroke="#1E232C" stroke-width="0.2"/>
+          </svg>      
+      </ion-button>  
+    </ion-item>
+
+    <ion-text class="welcome">
+      <h1>Bem-vindo de volta a clínica <b>Ortoclínica!</b></h1>
+    </ion-text>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-item>
+      <div>
+      <ion-input [ngClass]="{'error' : !formularioValido}" formControlName="nome" fill="solid" placeholder="Nome completo *"></ion-input>
+      <p *ngIf="!formularioValido" class="type-error">Digite um nome completo</p>
+    </div>
+    </ion-item>
+
+    <ion-item>
+      <div>
+      <ion-input [ngClass]="{'error' : !formularioValido}" formControlName="email" fill="solid" placeholder="E-mail *" type="email"></ion-input>
+      <p *ngIf="!formularioValido" class="type-error">Digite um e-mail</p>
+    </div>
+    </ion-item>
+
+    <ion-item>
+      <div>
+      <ion-input [ngClass]="{'error' : !formularioValido}" formControlName="data" fill="solid" placeholder="Data de nascimento *" type="date"></ion-input>
+      <p *ngIf="!formularioValido" class="type-error">Digite uma data de nascimento</p>
+    </div>
+    </ion-item>
+
+    <ion-item>
+      <div>
+      <ion-input [ngClass]="{'error' : !formularioValido}" formControlName="senha" fill="solid" placeholder="Senha *" type="password"></ion-input>
+      <p *ngIf="!formularioValido" class="type-error">Digite uma senha</p>
+    </div>
+      <ion-icon name="eye" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+        <div>
+          <ion-input [ngClass]="{'error' : !formularioValido}" formControlName="confirmSenha" fill="solid" placeholder="Confirmar senha *" type="password"></ion-input>
+         <p *ngIf="!formularioValido" class="type-error">Digite sua senha novamente</p>
+        </div>
+    <ion-icon name="eye" slot="end"></ion-icon>
+
+    </ion-item>
+
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-button type="submit" class="primary" expand="block">Cadastrar</ion-button>
+
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <div class="hr">
+      <div>Registre com</div>
+      <hr>
+    </div>
+  </ion-toolbar>
+
+  <ion-toolbar class="login-buttons">
+    <ion-buttons>
+      <ion-button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M14.7956 25.0001V14.0703H18.3496L18.8779 9.791H14.7956V7.06524C14.7956 5.83038 15.1272 4.98491 16.8355 4.98491H19V1.16965C17.9468 1.05255 16.8882 0.99601 15.829 1.00029C12.6877 1.00029 10.5308 2.98993 10.5308 6.64251V9.783H7V14.0623H10.5386V25.0001H14.7956Z" fill="#4092FF"/></svg>
+        </ion-button>
+  
+        <ion-button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M6.42014 15.4656L5.59739 18.537L2.59026 18.6007C1.69158 16.9338 1.18182 15.0267 1.18182 13C1.18182 11.0403 1.65843 9.19223 2.50324 7.56497H2.50389L5.18108 8.0558L6.35385 10.7169C6.10839 11.4325 5.9746 12.2007 5.9746 13C5.9747 13.8676 6.13184 14.6988 6.42014 15.4656Z" fill="#FBBB00"/>
+            <path d="M24.6117 10.7922C24.7474 11.5071 24.8182 12.2454 24.8182 13C24.8182 13.8461 24.7292 14.6714 24.5598 15.4675C23.9845 18.1766 22.4812 20.5422 20.3987 22.2162L20.3981 22.2156L17.026 22.0435L16.5488 19.0643C17.9306 18.2539 19.0105 16.9857 19.5793 15.4675H13.2598V10.7922H19.6715H24.6117Z" fill="#518EF8"/>
+            <path d="M20.3981 22.2156L20.3987 22.2163C18.3734 23.8442 15.8007 24.8182 13 24.8182C8.49938 24.8182 4.5864 22.3026 2.59029 18.6007L6.42016 15.4656C7.4182 18.1293 9.98768 20.0254 13 20.0254C14.2948 20.0254 15.5078 19.6754 16.5487 19.0643L20.3981 22.2156Z" fill="#28B446"/>
+            <path d="M20.5436 3.90259L16.715 7.03699C15.6377 6.36364 14.3643 5.97465 13.0001 5.97465C9.91953 5.97465 7.30199 7.95775 6.35395 10.7169L2.50394 7.56493H2.5033C4.47019 3.77273 8.43252 1.18182 13.0001 1.18182C15.8676 1.18182 18.4968 2.20327 20.5436 3.90259Z" fill="#F14336"/>
+            </svg>
+        </ion-button>
+  
+        <ion-button>
+          <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#404041}</style><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+<ion-toolbar class="bottom-text">
+  <div class="entre-agora">
+    <div>Já possui conta? <a [href]="'/login'"><b>Entre agora</b></a></div>
+  </div>
+</ion-toolbar>
+</form>
+
+</ion-content>
